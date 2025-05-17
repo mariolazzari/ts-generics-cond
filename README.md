@@ -21,3 +21,9 @@ const italy: Country<string, Capital> = {
   },
 };
 ```
+
+### Building generic functions
+
+```ts
+
+```
