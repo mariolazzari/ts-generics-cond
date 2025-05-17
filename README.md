@@ -1,0 +1,1 @@
+# ts-generics-cond
