@@ -1,3 +1,4 @@
+import { Animal, logAnimalName } from "./Animal";
 import { Capital } from "./Capital";
 import { Country } from "./Country";
 import { logValue, logValues } from "./func";
@@ -11,3 +12,10 @@ const italy: Country<string, Capital> = {
 
 logValue(italy);
 logValues<string, number>("Mario", 50);
+
+const dog: Animal = {
+  name: "Tudor",
+  species: "dog",
+};
+
+logAnimalName(dog);

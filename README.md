@@ -42,3 +42,16 @@ function logValues<T, V>(value1: T, value2: V) {
 
 logValues<string, number>("Mario", 50);
 ```
+
+### Working with constraints
+
+```ts
+type Animal = {
+  name: string;
+  species: string;
+};
+
+function logAnimalName<T extends Animal>({ name }: T) {
+  console.log(`Animal name: ${name}`);
+}
+```
