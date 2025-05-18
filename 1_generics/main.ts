@@ -35,3 +35,16 @@ let cat: Animal = {
 };
 cat = updateAnimal(cat, { species: "cat" });
 logValue(cat);
+
+const roDog: Readonly<Animal> = {
+  name: "RO",
+  species: "dog",
+  age: 10,
+};
+// roDog.age = 20 -> error
+console.log(roDog);
+
+const roAnimals: ReadonlyArray<Animal> = [...animals];
+const roAnimals2: readonly Animal[] = [...animals];
+// roAnimals.push(dog) -> error
+console.log(roAnimals, roAnimals2);

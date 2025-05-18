@@ -1,6 +1,7 @@
 export type Animal = {
   name: string;
   species: string;
+  age?: number;
 };
 
 export function logAnimalName<T extends Animal>({ name }: T) {

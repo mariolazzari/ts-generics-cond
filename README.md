@@ -77,3 +77,18 @@ function updateAnimal(animal: Animal, fields: Partial<Animal>): Animal {
   };
 }
 ```
+
+### Enforcing immutability with readonly type
+
+```ts
+const roDog: Readonly<Animal> = {
+  name: "RO",
+  species: "dog",
+  age: 10,
+};
+// roDog.age = 20 -> error
+
+const roAnimals: ReadonlyArray<Animal> = [...animals];
+const roAnimals2: readonly Animal[] = [...animals];
+```
+
