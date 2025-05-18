@@ -92,3 +92,29 @@ const roAnimals: ReadonlyArray<Animal> = [...animals];
 const roAnimals2: readonly Animal[] = [...animals];
 ```
 
+## Transforming existing data with types
+
+### Working with intersection types
+
+```ts
+export type InvalidAirport = {
+  name: string;
+  code: string;
+  country: string;
+};
+
+export type ValidAirport = InvalidAirport & {
+  original: InvalidAirport;
+};
+```
+
+### Creating input and output generics
+
+```ts
+function transformData<TInput, TOutput>(
+  data: TInput[],
+  transform: (input: TInput) => TOutput
+) {
+  return data.map(transform);
+}
+```
