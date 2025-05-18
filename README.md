@@ -25,5 +25,20 @@ const italy: Country<string, Capital> = {
 ### Building generic functions
 
 ```ts
+function logValue<T>(value: T) {
+  console.log(value);
+}
 
+logValue(italy);
+```
+
+### Handling multiple parameters
+
+```ts
+function logValues<T, V>(value1: T, value2: V) {
+  console.log(value1);
+  console.log(value2);
+}
+
+logValues<string, number>("Mario", 50);
 ```

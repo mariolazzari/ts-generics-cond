@@ -1,6 +1,6 @@
 import { Capital } from "./Capital";
 import { Country } from "./Country";
-import { logValue } from "./func";
+import { logValue, logValues } from "./func";
 
 const italy: Country<string, Capital> = {
   name: "Italy",
@@ -10,3 +10,4 @@ const italy: Country<string, Capital> = {
 };
 
 logValue(italy);
+logValues<string, number>("Mario", 50);
