@@ -55,3 +55,14 @@ function logAnimalName<T extends Animal>({ name }: T) {
   console.log(`Animal name: ${name}`);
 }
 ```
+
+### Building arrays
+
+```ts
+const numbers: Array<number> = [1, 2, 3, 4, 5];
+const strings: Array<string> = ["Mario", "Lazzari"];
+const animals: Array<Animal> = [
+  { name: "Tudor", species: "dog" },
+  { name: "Bart", species: "dog" },
+];
+```
