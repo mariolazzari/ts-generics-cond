@@ -1,4 +1,4 @@
-import { Animal, logAnimalName } from "./Animal";
+import { Animal, logAnimalName, updateAnimal } from "./Animal";
 import { Capital } from "./Capital";
 import { Country } from "./Country";
 import { logValue, logValues } from "./func";
@@ -28,3 +28,10 @@ const animals: Array<Animal> = [
 ];
 
 console.log(numbers, strings, animals);
+
+let cat: Animal = {
+  name: "Miao",
+  species: "dog",
+};
+cat = updateAnimal(cat, { species: "cat" });
+logValue(cat);

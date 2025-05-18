@@ -66,3 +66,14 @@ const animals: Array<Animal> = [
   { name: "Bart", species: "dog" },
 ];
 ```
+
+### Understanding partial types
+
+```ts
+function updateAnimal(animal: Animal, fields: Partial<Animal>): Animal {
+  return {
+    ...animal,
+    ...fields,
+  };
+}
+```
