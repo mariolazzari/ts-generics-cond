@@ -121,3 +121,23 @@ function transformData<TInput, TOutput>(
 
 ### Transforming data with generics
 
+```ts
+const airports = transformData(invalidAirports, a => ({
+  ...a,
+  code: a.code.toUpperCase(),
+  original: a,
+}));
+```
+
+### Filtering countries with generics
+
+```ts
+function filterCountry<T extends { country: string }>(
+  itens: T[],
+  filter: string
+): T[] {
+  return itens.filter(item => item.country === filter);
+}
+```
+
+### 

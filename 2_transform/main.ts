@@ -1,4 +1,9 @@
-import { InvalidAirport, transformData } from "./Airport";
+import {
+  filterCountry,
+  InvalidAirport,
+  search,
+  transformData,
+} from "./Airport";
 
 const invalidAirports: InvalidAirport[] = [
   { name: "One", code: "1", country: "Italy" },
@@ -13,3 +18,9 @@ const airports = transformData(invalidAirports, a => ({
   original: a,
 }));
 console.table(airports);
+
+const usAirports = filterCountry(airports, "US");
+console.table(usAirports);
+
+const searchAirports = search(airports, "a");
+console.table(searchAirports);
