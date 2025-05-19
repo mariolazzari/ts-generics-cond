@@ -1,6 +1,7 @@
 import {
   AirportNotification,
   filterCountry,
+  getNotificationDetails,
   InvalidAirport,
   search,
   transformData,
@@ -52,3 +53,8 @@ const notifications: AirportNotification[] = [
   },
 ];
 console.log(notifications);
+
+notifications.forEach(notification => {
+  const dettails = getNotificationDetails(notification);
+  console.log(dettails);
+});

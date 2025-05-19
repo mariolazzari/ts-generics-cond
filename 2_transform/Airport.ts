@@ -60,3 +60,24 @@ export type AirportNotification =
       airport: ValidAirport;
       reason: string;
     };
+
+export function getNotificationDetails(
+  notification: AirportNotification
+): string {
+  const { type, airport } = notification;
+  const { code } = airport;
+
+  switch (type) {
+    case "arrival":
+      return `Flight ${code} arrived at ${notification.temrinal} at ${notification.time}`;
+
+    case "departure":
+      return `Flight ${code} departed from ${notification.gate} at ${notification.time}`;
+
+    case "delay":
+      return `Flight ${code} delayed to ${notification.newTime}`;
+
+    case "cancel":
+      return `Flight ${code} canceled due to ${notification.reason}`;
+  }
+}
