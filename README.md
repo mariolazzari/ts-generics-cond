@@ -138,6 +138,49 @@ function filterCountry<T extends { country: string }>(
 ): T[] {
   return itens.filter(item => item.country === filter);
 }
+
+function search<T extends InvalidAirport | ValidAirport>(
+  itens: T[],
+  filter: string
+): T[] {
+  const loerCaseFilter = filter.toLowerCase();
+
+  return itens.filter(
+    item =>
+      item.name.toLocaleLowerCase().includes(loerCaseFilter) ||
+      item.code.toLocaleLowerCase().includes(loerCaseFilter) ||
+      item.country.toLocaleLowerCase().includes(loerCaseFilter)
+  );
+}
+```
+
+### Building discriminated unions
+
+```ts
+type AirportNotification =
+  | {
+      type: "departure";
+      airport: ValidAirport;
+      gate: string;
+      time: Date;
+    }
+  | {
+      type: "arrival";
+      airport: ValidAirport;
+      temrinal: string;
+      time: Date;
+    }
+  | {
+      type: "delay";
+      airport: ValidAirport;
+      newTime: Date;
+      time: Date;
+    }
+  | {
+      type: "cancel";
+      airport: ValidAirport;
+      reason: string;
+    };
 ```
 
 ### 

@@ -1,4 +1,5 @@
 import {
+  AirportNotification,
   filterCountry,
   InvalidAirport,
   search,
@@ -24,3 +25,30 @@ console.table(usAirports);
 
 const searchAirports = search(airports, "a");
 console.table(searchAirports);
+
+const notifications: AirportNotification[] = [
+  {
+    type: "arrival",
+    airport: airports[0],
+    temrinal: "A",
+    time: new Date(),
+  },
+  {
+    type: "departure",
+    airport: airports[1],
+    gate: "B",
+    time: new Date(),
+  },
+  {
+    type: "delay",
+    airport: airports[2],
+    newTime: new Date(),
+    time: new Date(),
+  },
+  {
+    type: "cancel",
+    airport: airports[3],
+    reason: "Weather",
+  },
+];
+console.log(notifications);

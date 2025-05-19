@@ -35,3 +35,28 @@ export function search<T extends InvalidAirport | ValidAirport>(
       item.country.toLocaleLowerCase().includes(loerCaseFilter)
   );
 }
+
+export type AirportNotification =
+  | {
+      type: "departure";
+      airport: ValidAirport;
+      gate: string;
+      time: Date;
+    }
+  | {
+      type: "arrival";
+      airport: ValidAirport;
+      temrinal: string;
+      time: Date;
+    }
+  | {
+      type: "delay";
+      airport: ValidAirport;
+      newTime: Date;
+      time: Date;
+    }
+  | {
+      type: "cancel";
+      airport: ValidAirport;
+      reason: string;
+    };
