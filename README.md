@@ -216,3 +216,32 @@ function getNotificationDetails(
 type IsString<T> = T extends string ? "Yes" : "No";
 type ButtonLabel<T> = T extends "delete" ? "Delete" : "Submit";
 ```
+
+### Narrowing types
+
+```ts
+function handleValue(value: string | string[]): string {
+  return typeof value === "string"
+    ? value.toLowerCase()
+    : value.join(",").toLowerCase();
+}
+
+type Dog = {
+  kind: "dog";
+  bark: () => void;
+};
+
+type Cat = {
+  kind: "cat";
+  meow: () => void;
+};
+
+type Pet = Dog | Cat;
+
+function speak(pet: Pet) {
+  if (pet.kind === "dog") {
+    return pet.bark();
+  }
+  pet.meow();
+}
+```
