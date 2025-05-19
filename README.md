@@ -207,3 +207,12 @@ function getNotificationDetails(
   }
 }
 ```
+
+### Types and conditionals
+
+## Understanding conditional types
+
+```ts
+type IsString<T> = T extends string ? "Yes" : "No";
+type ButtonLabel<T> = T extends "delete" ? "Delete" : "Submit";
+```
