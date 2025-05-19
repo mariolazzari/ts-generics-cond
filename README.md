@@ -118,3 +118,6 @@ function transformData<TInput, TOutput>(
   return data.map(transform);
 }
 ```
+
+### Transforming data with generics
+

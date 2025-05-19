@@ -7,4 +7,9 @@ const invalidAirports: InvalidAirport[] = [
   { name: "Four", code: "4", country: "France" },
 ];
 
-// const airports = transformData(invalidAirports);
+const airports = transformData(invalidAirports, a => ({
+  ...a,
+  code: a.code.toUpperCase(),
+  original: a,
+}));
+console.table(airports);
