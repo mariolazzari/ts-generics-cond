@@ -245,3 +245,28 @@ function speak(pet: Pet) {
   pet.meow();
 }
 ```
+
+### Widening types
+
+```ts
+export type Status = "success" | "error";
+
+export function handle(status: Status) {
+  if (status === "success") {
+    return "Success";
+  }
+
+  return "Error";
+}
+
+const status = "success";
+let error = "error" as const;
+handle(status);
+handle(error);
+```
+
+### Inferring types in conditional statements
+
+```ts
+
+```

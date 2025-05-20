@@ -2,6 +2,7 @@ import { ButtonLabel } from "./ButtonLabel";
 import { speak } from "./func";
 import { IsString } from "./IsString";
 import { Pet } from "./Pet";
+import { handle } from "./Status";
 
 type A = IsString<string>;
 type B = IsString<number>;
@@ -25,3 +26,8 @@ const bart: Pet = {
 };
 
 speak(bart);
+
+const status = "success";
+let error = "error" as const;
+handle(status);
+handle(error);
